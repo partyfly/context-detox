@@ -15,7 +15,28 @@ A Claude Code skill: post-task context detox. Audit the seven components of your
 
 理论之外补了三条实践纪律:**重读纪律**(凭摘要写下的断言一律待验证——压缩即中毒源)、**优先级链**(权威冲突靠写死在源头文件里的排序,不靠临场判断)、**修源头**(败方条目当场改掉,不立注意事项)。
 
-## 安装
+## 结构与安装
+
+```
+SKILL.md                 # 路由:工序四步+两条硬规矩(自身即渐进式披露的示范)
+references/procedure.md  # 完整工序:七件套×四病理查表、两张必答工件模板、边界(什么不许清)、验收、汇报格式
+scripts/scan.py          # 机械预扫(零依赖):分层追加/无日期裁定/断链/索引孤儿/触发面过宽/重名
+```
+
+```bash
+# 机械预扫单独也能跑:
+python3 scripts/scan.py --memory ~/.claude/projects/<项目>/memory --skills ~/.claude/skills
+```
+
+## 安装(git,推荐)
+
+```bash
+git clone https://github.com/partyfly/context-detox ~/.claude/skills/context-detox
+```
+
+<details><summary>只要 SKILL.md 的最小安装</summary>
+
+## 最小安装
 
 ```bash
 mkdir -p ~/.claude/skills/context-detox
@@ -29,3 +50,5 @@ curl -o ~/.claude/skills/context-detox/SKILL.md https://raw.githubusercontent.co
 这个技能诞生于一次真实事故:我们在制作一期讲"上下文工程"的科普视频时,执行任务的 AI 自己撞上了全部四种失败模式——凭压缩摘要断言文件实现方式(中毒)、迁就积累的规则清单而不做新判断(分心)、被明示"不要参照"的旧稿仍在带偏产出(混淆)、风格包与用户给的参照源打架时信错了旧的(冲突)。于是把片子里的方法论吃回自己肚子,变成收工必跑的清理工序。
 
 License: MIT
+
+</details>
